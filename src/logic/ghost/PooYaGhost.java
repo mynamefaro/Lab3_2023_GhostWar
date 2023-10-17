@@ -1,6 +1,7 @@
 package logic.ghost;
 
 import logic.game.GameController;
+import utils.Config;
 
 public class PooYaGhost extends HighGhost{
 	int power;
@@ -8,16 +9,16 @@ public class PooYaGhost extends HighGhost{
 		super();
 		this.power = power;
 	}
-	public void attact() {
+	public void attack() {
 		GameController.getInstance().setHp(GameController.getInstance().getHp() - this.power);
 		GameController.getInstance().setScore(GameController.getInstance().getScore() - this.power);
 	}
 	public String toString() {
-		return "PooYaGhost [HP: " + this.getHp() + " , Power" + this.power + "]";
+		return "PooYaGhost [HP: " + this.getHp() + " , Power: " + this.power + "]";
 	}
 	@Override
 	public int getLevel() {
-		return 10;
+		return Config.PooYaGhostLevel;
 	}
 	@Override
 	public void damange() {

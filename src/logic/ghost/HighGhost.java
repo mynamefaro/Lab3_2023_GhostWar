@@ -1,20 +1,14 @@
 package logic.ghost;
 
+import utils.Config;
+
 public abstract class HighGhost extends Ghost{
-	private int Hp;
+	//TODO: Write your code here.
 	public HighGhost() {
-		this.Hp = 10;
+		super(Config.HighGhostHp);
 	}
-	public boolean isDestroyed() {
-		return getHp() <= 0;
-	}
-	public int getHp() {
-		return Hp;
-	}
-	public void decreaseHp(int amount) {
-		this.Hp -= amount;
-	}
-	public abstract int getLevel();
-	public abstract void attact();
+	
+	//TODO: Write your code here.
 	public abstract void damange();
+	//===========================
 }

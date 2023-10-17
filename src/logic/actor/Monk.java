@@ -3,15 +3,16 @@ package logic.actor;
 import logic.game.GameController;
 import logic.ghost.Ghost;
 import logic.ghost.HighGhost;
+import utils.Config;
 
 public class Monk extends Actor{
 	
 	@Override
 	public int getLevel() {
-		return 3;
+		return Config.MonkLevel;
 	}
 	@Override
-	public void attact() {
+	public void attack() {
 		// TODO Auto-generated method stub
 		Ghost currentGhost = GameController.getInstance().getGhosts().get(0);
 		if(currentGhost instanceof HighGhost) {

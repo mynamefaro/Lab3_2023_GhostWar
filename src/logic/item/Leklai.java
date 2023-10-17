@@ -4,12 +4,13 @@ import logic.game.GameController;
 import logic.ghost.Ghost;
 import logic.ghost.HighGhost;
 import logic.ghost.LowGhost;
+import utils.Config;
 
 public class Leklai extends Item{
 
 	@Override
 	public int getLevel() {
-		return 5;
+		return Config.LeklaiLevel;
 	}
 	@Override
 	public void effect() {

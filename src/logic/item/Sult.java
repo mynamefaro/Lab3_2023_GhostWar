@@ -3,6 +3,7 @@ package logic.item;
 import logic.game.GameController;
 import logic.ghost.Ghost;
 import logic.ghost.PryGhost;
+import utils.Config;
 
 public class Sult extends Item{
 	private int ppt;
@@ -11,9 +12,10 @@ public class Sult extends Item{
 	}
 	@Override
 	public int getLevel() {
-		return 1;
+		return Config.SultLevel;
 	}
 	@Override
+	//TODO: Write your code here.
 	public void effect() {
 		for(Ghost ghost : GameController.getInstance().getGhosts()) {
 			if(ghost instanceof PryGhost) {
@@ -21,6 +23,7 @@ public class Sult extends Item{
 			}
 		}
 	}
+	//==========================
 	public String toString() {
 		return "Sult [PPT: " + this.ppt + "]";
 	}

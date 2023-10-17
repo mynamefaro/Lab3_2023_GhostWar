@@ -7,15 +7,16 @@ import logic.ghost.LowGhost;
 import logic.item.Amulet;
 import logic.item.Banana;
 import logic.item.Item;
+import utils.Config;
 
 public class Monkey extends Actor{
 	
 	@Override
 	public int getLevel() {
-		return 1;
+		return Config.MonkeyLevel;
 	}
 	@Override
-	public void attact() {
+	public void attack() {
 		// TODO Auto-generated method stub
 		Ghost currentGhost = GameController.getInstance().getGhosts().get(0);
 		

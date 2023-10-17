@@ -1,12 +1,13 @@
 package logic.item;
 
 import logic.game.GameController;
+import utils.Config;
 
 public class Amulet extends Item{
 
 	@Override
 	public int getLevel() {
-		return 1;
+		return Config.AmuletLevel;
 	}
 
 	@Override
@@ -16,7 +17,6 @@ public class Amulet extends Item{
 		}
 		
 	}
-
 	@Override
 	public String toString() {
 		return "Amulet";

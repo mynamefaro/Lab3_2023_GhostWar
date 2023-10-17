@@ -7,15 +7,16 @@ import logic.ghost.LowGhost;
 import logic.item.Amulet;
 import logic.item.Banana;
 import logic.item.Item;
+import utils.Config;
 
 public class GhostDoctor extends Actor{
 	
 	@Override
 	public int getLevel() {
-		return 5;
+		return Config.GhostDoctorLevel;
 	}
 	@Override
-	public void attact() {
+	public void attack() {
 		// TODO Auto-generated method stub
 		Ghost currentGhost = GameController.getInstance().getGhosts().get(0);
 		
@@ -26,7 +27,6 @@ public class GhostDoctor extends Actor{
 	@Override
 	public String toString() {
 		return "GhostDoctor";
-		
 	}
 
 }

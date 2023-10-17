@@ -1,22 +1,23 @@
 package logic.ghost;
 
 import logic.game.GameController;
+import utils.Config;
 
 public class GaGhost extends LowGhost{
-	private int power;
+	private int energy;
 	public GaGhost() {
 		super();
-		this.power = 6;
+		this.energy = Config.GaGhostPower;
 	}
-	public GaGhost(int power) {
+	public GaGhost(int energy) {
 		super();
-		this.power = power;
+		this.energy = energy;
 	}
-	public void attact() {
-		GameController.getInstance().setHp(GameController.getInstance().getHp() - this.power);
+	public void attack() {
+		GameController.getInstance().setHp(GameController.getInstance().getHp() - this.energy);
 		
 	}
 	public String toString() {
-		return "GaGhost [HP: " + this.getHp() + " , Power" + this.power + "]";
+		return "GaGhost [HP: " + this.getHp() + " , Energy: " + this.energy + "]";
 	}
 }

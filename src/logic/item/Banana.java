@@ -2,12 +2,13 @@ package logic.item;
 
 import logic.game.GameController;
 import logic.ghost.Ghost;
+import utils.Config;
 
 public class Banana extends Item{
 
 	@Override
 	public int getLevel() {
-		return 3;
+		return Config.BananaLevel;
 	}
 	@Override
 	public void effect() {

@@ -9,6 +9,7 @@ import logic.actor.GhostDoctor;
 import logic.actor.Monk;
 import logic.actor.Monkey;
 import logic.actor.Villager;
+import logic.game.GameController;
 import logic.ghost.GaGhost;
 import logic.ghost.Ghost;
 import logic.ghost.MaBongGhost;
@@ -26,20 +27,22 @@ public class GameUtils {
 	
 	public static Ghost getNewGhost(int x) {
 		Random rand = Randomizer.getRandomizer();
-		Ghost GaGhost = new GaGhost(rand.nextInt(6));
-		Ghost MaBongGhost = new MaBongGhost(rand.nextInt(4), 1);
-		Ghost PongGhost = new PongGhost(rand.nextInt(2));
-		Ghost PooYaGhost = new PooYaGhost(rand.nextInt(2));
-		Ghost PryGhost = new PryGhost(rand.nextInt(3),rand.nextInt(1));
+		Ghost GaGhost = new GaGhost(1 + rand.nextInt(6));
+		Ghost MaBongGhost = new MaBongGhost(1 + rand.nextInt(4), 1);
+		Ghost PongGhost = new PongGhost(1 + rand.nextInt(2));
+		Ghost PooYaGhost = new PooYaGhost(1 + rand.nextInt(2));
+		Ghost PryGhost = new PryGhost(1 + rand.nextInt(3),rand.nextInt(1));
 		
 		ArrayList<Ghost> GhostList = new ArrayList<Ghost>(Arrays.asList(GaGhost, MaBongGhost, PongGhost, PooYaGhost, PryGhost));
 		
 		return GhostList.get(x);
 		
 	}
-	public static Ghost getRandomGhost() {
+	public static Ghost getRandomGhost(boolean isAcceptHighGhost) {
 		Random rand = Randomizer.getRandomizer();
-		return getNewGhost(rand.nextInt(5));
+		int x = rand.nextInt(5);
+		while(!isAcceptHighGhost && (x == 3 || x == 2)) x = rand.nextInt(5);
+		return getNewGhost(x);
 	}
 	
 	public static Actor getNewActor(int x) {
@@ -51,6 +54,9 @@ public class GameUtils {
 		
 		ArrayList<Actor> ActorList = new ArrayList<Actor>(Arrays.asList(villager, monk, ghostDoctor, monkey));
 		
+		
+		GameController.getInstance().setScore(GameController.getInstance().getScore() - ActorList.get(x).getLevel());
+		
 		return ActorList.get(x);
 		
 	}
@@ -61,9 +67,7 @@ public class GameUtils {
 		Item leklai = new Leklai();
 		Item sult = new Sult(2);
 		
-		ArrayList<Item> ItemList = new ArrayList<Item>(Arrays.asList(amulet, banana, leklai, sult));
-		
+		ArrayList<Item> ItemList = new ArrayList<Item>(Arrays.asList(amulet, banana, leklai, sult));		
 		return ItemList.get(x);
-		
 	}
 }
