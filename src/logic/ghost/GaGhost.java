@@ -7,7 +7,7 @@ public class GaGhost extends LowGhost{
 	private int energy;
 	public GaGhost() {
 		super();
-		this.energy = Config.GaGhostPower;
+		this.energy = Config.GaGhostEnergy;
 	}
 	public GaGhost(int energy) {
 		super();

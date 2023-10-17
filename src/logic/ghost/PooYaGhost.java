@@ -23,12 +23,7 @@ public class PooYaGhost extends HighGhost{
 	@Override
 	public void damange() {
 		for(Ghost ghost : GameController.getInstance().getGhosts()) {
-			if(ghost instanceof LowGhost) {
-				((LowGhost)ghost).decreaseHp(-power);
-			}
-			if(ghost instanceof HighGhost) {
-				((HighGhost)ghost).decreaseHp(-power);
-			}
+			ghost.decreaseHp(-power);
 		}
 		
 	}

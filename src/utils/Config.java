@@ -5,7 +5,7 @@ public class Config {
 	public static int MonkLevel = 3;
 	public static int MonkeyLevel = 1;
 	public static int VillagerLevel = 3;
-	public static int GaGhostPower = 6;
+	public static int GaGhostEnergy = 6;
 	public static int HighGhostHp = 10;
 	public static int LowGhostHp = 3;
 	public static int LowGhostLevel = 1;

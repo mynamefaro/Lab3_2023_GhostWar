@@ -10,12 +10,6 @@ public class MaBongGhost extends LowGhost{
 		this.power = Config.MaBongGhostPower;
 		this.speed = Config.MaBongGhostSpeed;
 	}
-	public int getSpeed() {
-		return speed;
-	}
-	public void setSpeed(int speed) {
-		this.speed = speed;
-	}
 	public MaBongGhost(int power){
 		this.power = power;
 		this.speed = Config.MaBongGhostSpeed;
@@ -24,6 +18,13 @@ public class MaBongGhost extends LowGhost{
 		this.power = power;
 		this.speed = speed;
 	}
+	public int getSpeed() {
+		return speed;
+	}
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+	
 	public void attack() {
 		GameController.getInstance().setHp(GameController.getInstance().getHp() - this.power*this.speed);
 		
