@@ -39,11 +39,8 @@ public class GameIO {
         }
 		
 		if(x == actors.size()) {
-			
 			buyNewActor();
-			//TODO: Write your code here.
 			return selectActor(actors);
-			//===========================
 		}
 		
 		selectedActor = actors.get(x);
@@ -87,9 +84,7 @@ public class GameIO {
             	System.out.print("Please Select Your New Actor : ");
             	x = sc.nextInt();
                 if (x > 3)
-                	//TODO: Write your code here.
                     throw new InputMismatchException();
-                	//===========================
                 else {
                 	break;
                 }

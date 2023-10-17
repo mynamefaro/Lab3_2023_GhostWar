@@ -16,6 +16,8 @@ public class GameController {
 	private ArrayList <Actor> actors;
 	private ArrayList <Ghost> ghosts;
 	private ArrayList <Item> items;
+	
+	
 	public GameController() {
 		
 		this.actors = new ArrayList <Actor> ();
