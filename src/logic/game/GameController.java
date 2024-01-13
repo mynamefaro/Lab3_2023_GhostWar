@@ -46,34 +46,43 @@ public class GameController {
 			instance = new GameController();
 		return instance;
 	}
+	public void play(Actor selectedActor) {
+		//TODO: Write your code here.
+		
+		for(Item item:items) 
+			item.effect();
+		Ghost currentGhost = this.getGhosts().get(0);
+				
+		currentGhost.attack();
+				
+		selectedActor.attack();
+				
+		int count = 0;
+		for(Ghost ghost:ghosts) {
+			if(ghost.isDestroyed()) {
+				this.score += ghost.getLevel();
+				++count;
+			}
+		}
+				
+		ArrayList<Ghost> tmp = new ArrayList<Ghost>();
+				
+		for(Ghost ghost:ghosts) {
+			if(!ghost.isDestroyed()) 
+				tmp.add(ghost);
+		}
+		while((count--) > 0) 
+			tmp.add(GameUtils.getRandomGhost(true));		
+		ghosts = tmp;
+				
+		//=============================
+	}
 	public void updateGameController() {
-		
 		GameIO.showGameState();
-		
 		GameIO.showCurrentGhost(ghosts);
 		Actor selectedActor = GameIO.selectActor(this.actors);
 		GameIO.showItemList(this.items);
-		//TODO: Write your code here.
-		for(Item item:items) {
-			item.effect();
-		}
-		Ghost currentGhost = this.getGhosts().get(0);
-		currentGhost.attack();
-		
-		selectedActor.attack();
-		
-		//===========================
-		
-		
-		
-		if(currentGhost.isDestroyed()) {
-			//TODO: Write your code here.
-			this.getGhosts().remove(0);
-			this.score += currentGhost.getLevel();
-			//===========================
-			this.getGhosts().add(GameUtils.getRandomGhost(true));
-		}
-		
+		play(selectedActor);
 		
 		
 	}

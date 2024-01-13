@@ -4,7 +4,7 @@ import logic.game.GameController;
 import utils.Config;
 
 public class Amulet extends Item{
-
+	public Amulet() {};
 	@Override
 	public int getLevel() {
 		return Config.AmuletLevel;

@@ -108,14 +108,13 @@ public class GameIO {
 				+ "The Cost of Item is Item Level. Your score will be reduced.\n"
 				+ "<0> Amulet " + Config.AmuletLevel + "\n"
 				+ "<1> Banana " + Config.BananaLevel + "\n"
-				+ "<2> Leklai " + Config.LeklaiLevel + "\n"
-				+ "<3> Sult " + Config.SultLevel + "\n");
+				+ "<2> Leklai " + Config.LeklaiLevel + "\n");
 		
 		while (true) {
             try {
             	System.out.print("Please Select Your New Item : ");
             	x = sc.nextInt();
-                if (x > 3)
+                if (x > 2)
                     throw new InputMismatchException();
                 else {
                 	break;

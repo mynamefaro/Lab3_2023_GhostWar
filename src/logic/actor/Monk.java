@@ -21,6 +21,5 @@ public class Monk extends Actor{
 	}
 	public String toString() {
 		return "Monk";
-		
 	}
 }

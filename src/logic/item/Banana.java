@@ -5,7 +5,7 @@ import logic.ghost.Ghost;
 import utils.Config;
 
 public class Banana extends Item{
-
+	public Banana() {};
 	@Override
 	public int getLevel() {
 		return Config.BananaLevel;

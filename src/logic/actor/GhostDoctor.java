@@ -10,7 +10,9 @@ import logic.item.Item;
 import utils.Config;
 
 public class GhostDoctor extends Actor{
-	
+	public GhostDoctor() {
+		super();
+	}
 	@Override
 	public int getLevel() {
 		return Config.GhostDoctorLevel;

@@ -7,6 +7,7 @@ import logic.ghost.LowGhost;
 import utils.Config;
 
 public class Leklai extends Item{
+	public Leklai() {super();};
 
 	@Override
 	public int getLevel() {

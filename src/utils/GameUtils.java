@@ -20,7 +20,6 @@ import logic.item.Amulet;
 import logic.item.Banana;
 import logic.item.Item;
 import logic.item.Leklai;
-import logic.item.Sult;
 
 public class GameUtils {
 	
@@ -65,9 +64,8 @@ public class GameUtils {
 		Item amulet = new Amulet();
 		Item banana = new Banana();
 		Item leklai = new Leklai();
-		Item sult = new Sult(2);
 		
-		ArrayList<Item> ItemList = new ArrayList<Item>(Arrays.asList(amulet, banana, leklai, sult));		
+		ArrayList<Item> ItemList = new ArrayList<Item>(Arrays.asList(amulet, banana, leklai));		
 		return ItemList.get(x);
 	}
 }
